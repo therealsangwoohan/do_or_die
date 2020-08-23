@@ -1,0 +1,12 @@
+{% extends "layouts/loggedIn.html" %}
+{% block content %}
+  <h1>All Challenges</h1>
+  {% for challenge in allChallenges|reverse %}
+    <div class="challenge">
+      <a href="/challenges/{{ challenge._id }}">
+      <h3>{{challenge.username}}</h3>
+      <p>{{challenge.description}}</p>
+      </a>
+    </div>
+  {% endfor %}
+{% endblock %}

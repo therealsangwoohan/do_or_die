@@ -1,0 +1,13 @@
+{% extends "layouts/loggedIn.html" %}
+{% block content %}
+  <h1>Create a new challenge</h1>
+  <div class="create-challenge">
+    <form action="/create/" method="POST">
+      <label>Challenge Description</label>
+      <br>
+      <textarea name="description" required></textarea>
+      <br>
+      <button>Create Challenge</button>
+    </form>
+  </div>
+{% endblock %}

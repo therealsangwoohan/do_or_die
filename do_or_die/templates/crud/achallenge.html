@@ -1,0 +1,34 @@
+{% extends "layouts/loggedIn.html" %}
+{% block content %}
+  <div class="challenge">
+    <h3>{{ aChallenge.username }}</h3>
+    <p>{{ aChallenge.description }}</p>
+    {% if username == aChallenge.username %}
+      <a href="/challenges/{{ aChallenge._id }}/delete/">Delete Challenge</a>
+      <br>
+      <a href="/challenges/{{ aChallenge._id }}/edit/">Edit Challenge</a>
+    {% endif %}
+  </div>
+
+  <h4>Comment Section</h4>
+  {% for comment in commentsOfThisChallenge %}
+    <div class="comment">
+      <h5><i>{{ comment.username }}</i></h5>
+      <p>{{ comment.raw }}</p>
+      {% if username == comment.username %}
+        <a href="/challenges/{{ aChallenge._id }}/{{ comment._id }}/delete/">Delete Comment</a>
+      {% endif %}
+    </div>
+    <br>
+  {% endfor %}
+
+  <div class="add-comment">
+    <form
+      action="/challenges/{{ aChallenge._id }}/comments/addcomment/"
+      method="POST">
+      <textarea name="raw" required></textarea>
+      <br>
+      <button>Add Comment</button>
+    </form>
+  </div>
+{% endblock %}

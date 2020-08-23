@@ -1,0 +1,5 @@
+.login-form, .registration-form {
+    border: 1px solid black;
+    text-align: center;
+    padding-bottom: 5px;
+}

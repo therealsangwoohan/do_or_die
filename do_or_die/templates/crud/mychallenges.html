@@ -1,0 +1,15 @@
+{% extends "layouts/loggedIn.html" %}
+{% block content %}
+  <div class="content">
+    <a href="/create/">Create a new challenge</a>
+    <h1>My Challenges</h1>
+    {% for challenge in myChallenges|reverse %}
+      <div class="challenge">
+        <a href="/challenges/{{ challenge._id }}">
+        <h3>{{challenge.username}}</h3>
+        <p>{{challenge.description}}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
