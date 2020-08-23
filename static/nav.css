@@ -1,0 +1,20 @@
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.nav li a {
+    float: left;
+    display: block;
+    text-align: center;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav li a:hover:not(.active) {
+    background-color: #111;
+}

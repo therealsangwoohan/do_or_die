@@ -1,0 +1,13 @@
+{% extends "layouts/loggedIn.html" %}
+{% block content %}
+  <h1>Edit challenge</h1>
+  <div class="edit-challenge">
+    <form action="/challenges/{{ aChallenge._id }}/edit/" method="POST">
+      <label>Challenge Description</label>
+      <br>
+      <textarea name="description" required>{{ aChallenge.description }}</textarea>
+      <br>
+      <button>Update</button>
+    </form>
+  </div>
+{% endblock %}
